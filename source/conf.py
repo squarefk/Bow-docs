@@ -6,9 +6,9 @@ import sys
 
 # -- Project information -----------------------------------------------------
 
-project = "Sphinx Themes Sample"
-copyright = "2020, Pradyun Gedam"
-author = "Pradyun Gedam"
+project = "Bow"
+copyright = "2021, Bow Developers"
+author = "Prof. Jiang's Group"
 
 # -- Extensions --------------------------------------------------------------
 extensions = [
@@ -25,5 +25,4 @@ html_title = project
 # NOTE: All the lines are after this are the theme-specific ones. These are
 #       written as part of the site generation pipeline for this project.
 # !! MARKER !!
-extensions.append("faculty_sphinx_theme")
-html_theme = "faculty-sphinx-theme"
+html_theme = "furo"
