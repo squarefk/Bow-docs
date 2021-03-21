@@ -1,0 +1,3 @@
+[submodule "Bow"]
+	path = Bow
+	url = git@github.com:penn-graphics-research/Bow
