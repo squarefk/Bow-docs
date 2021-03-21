@@ -20,10 +20,11 @@ Overview
    :caption: General Simulation:
 
    boundary_condition
+   diff_test
    debugging
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: MPM:
 
    sparse_grid
