@@ -43,7 +43,7 @@ MPM
     \begin{split}
     F(\alpha) &= (\sum_i (x_i + \alpha \Delta x_i ) (\nabla \omega_{ip}^n)^T)F^n\\
             &= F(0) + \alpha (\sum_i \Delta x_i (\nabla \omega_{ip}^n)^T)F^n\\
-    F(\alpha)F(0)^{-1} &= I + \alpha (\sum_i \Delta x_i (\nabla \omega_{ip}^n)^T)F^nF(0)^{-1}
+    F(\alpha)F(0)^{-1} &= I + \alpha (\sum_i \Delta x_i (\nabla \omega_{ip}^n)^T)(\sum_i x_i (\nabla \omega_{ip}^n)^T)^{-1}
     \end{split}
 
 
