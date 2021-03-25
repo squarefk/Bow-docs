@@ -22,6 +22,7 @@ Overview
    boundary_condition
    diff_test
    debugging
+   non_invertable_stepsize
 
 .. toctree::
    :maxdepth: 1
