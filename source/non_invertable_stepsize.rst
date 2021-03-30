@@ -1,4 +1,4 @@
-Non-invertable Step Size
+Inversion-free Step Size
 ==================
 
 
@@ -32,10 +32,10 @@ FEM
 .. math::
     \begin{split}
         F(\alpha) &= (T + \alpha \Delta T) B^{-1} \\
-        A = F(\alpha)F(0)^{-1} &= (T + \alpha \Delta T) T^{-1} = I + \alpha \Delta T T^{-1}
+        F(\alpha)F(0)^{-1} &= (T + \alpha \Delta T) T^{-1} = I + \alpha \Delta T T^{-1}
     \end{split}
 
-where :math:`T` is the triangle basis of the element.
+where :math:`T` is the triangle basis of the element. Let :math:`A = T^{-T}\Delta T^T` and solve with Eigen dense linear solver.
 
 MPM
 ^^^^^^^^^^
@@ -45,8 +45,12 @@ MPM
     \begin{split}
     F(\alpha) &= (\sum_i (x_i + \alpha \Delta x_i ) (\nabla \omega_{ip}^n)^T)F^n\\
             &= F(0) + \alpha (\sum_i \Delta x_i (\nabla \omega_{ip}^n)^T)F^n\\
-    A = F(\alpha)F(0)^{-1} &= I + \alpha (\sum_i \Delta x_i (\nabla \omega_{ip}^n)^T)(\sum_i x_i (\nabla \omega_{ip}^n)^T)^{-1}
+    F(\alpha)F(0)^{-1} &= I + \alpha (\sum_i \Delta x_i (\nabla \omega_{ip}^n)^T)(\sum_i x_i (\nabla \omega_{ip}^n)^T)^{-1}
     \end{split}
+
+Let :math:`A = (\sum_i x_i (\nabla \omega_{ip}^n)^T)^{-T}(\sum_i \Delta x_i (\nabla \omega_{ip}^n)^T)^T`
+
+Or let :math:`A = F(0)^{-T}(Grad \Delta x_p F^n)^T`
 
 
 Use the following code to solve the equation:
