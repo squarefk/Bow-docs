@@ -50,7 +50,7 @@ MPM
 
 Let :math:`A = (\sum_i x_i (\nabla \omega_{ip}^n)^T)^{-T}(\sum_i \Delta x_i (\nabla \omega_{ip}^n)^T)^T`
 
-Or let :math:`A = F(0)^{-T}(Grad \Delta x_p F^n)^T`
+Or let :math:`A = F(0)^{-T}(Grad\ \Delta x_p F^n)^T`
 
 
 Use the following code to solve the equation:
@@ -69,3 +69,12 @@ Use the following code to solve the equation:
     c = A.diagonal().sum();
     d = 1 - eps;
     alpha = Math::get_smallest_positive_real_cubic_root(a, b, c, d);
+
+
+J-based
+-------------
+.. math::
+
+    J(\alpha) = (1 + (Trace(Grad \ x + \alpha Grad \ \Delta x) - dim))  J^n = \alpha Trace(Grad \ \Delta x)  J^n + J(0);
+
+Let :math:`J(\alpha) = \epsilon J(0)`, we have :math:`\alpha = (1 - \epsilon) * J(0) / (Trace(Grad \ \Delta x)  J^n)`
